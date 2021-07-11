@@ -18,7 +18,7 @@ const SearchComponent = ({ handleKeyUp }) => {
   );
 };
 
-const DashboardComponent = ({ employees, handleKeyUp, handleDelete }) => {
+const DashboardComponent = ({ employees, handleKeyUp, handleDelete, handleAssendingSort, handleDesendingSort  }) => {
   return (
     <div>
       <SearchComponent handleKeyUp={handleKeyUp} />
@@ -27,7 +27,27 @@ const DashboardComponent = ({ employees, handleKeyUp, handleDelete }) => {
           <tr>
             <th scope="col">S.No</th>
             <th scope="col">Username</th>
-            <th scope="col">Age</th>
+            <th scope="col">
+              Age
+              <span onClick={handleAssendingSort}>
+                <img
+                  className={style.imgStyles}
+                  src={
+                    "https://freepikpsd.com/media/2019/10/up-icon-png-7-Transparent-Images.png"
+                  }
+                  alt="logo"
+                />
+              </span>
+              <span onClick={handleDesendingSort}>
+                <img
+                  className={`${style.imgStyles} ${style.downArrow}`}
+                  src={
+                    "https://freepikpsd.com/media/2019/10/up-icon-png-7-Transparent-Images.png"
+                  }
+                  alt="logo"
+                />
+              </span>
+            </th>
             <th scope="col">Designation</th>
             <th scope="col">Company</th>
           </tr>

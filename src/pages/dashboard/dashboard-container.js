@@ -48,12 +48,33 @@ const DashboardContainer = (props) => {
       });
   };
 
+  const handleAssendingSort = () => {
+    setFilteredEmps(employees => {
+     employees.sort(function(a, b) {
+      return a.age - b.age;
+    })
+    return [...employees];
+  })
+
+  };
+
+  const handleDesendingSort = () => {
+    setFilteredEmps(employees => {
+      employees.sort(function(a, b) {
+       return b.age - a.age;
+     })
+     return [...employees];
+   })
+  };
+
   return (
     <DashboardComponent
       {...props}
       employees={filteredEmps}
       handleKeyUp={handleKeyUp}
       handleDelete={handleDelete}
+      handleAssendingSort={handleAssendingSort}
+      handleDesendingSort={handleDesendingSort}
     />
   );
 };

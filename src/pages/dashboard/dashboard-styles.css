@@ -9,3 +9,7 @@
   width: 20px;
   height: 20px;
 }
+
+.downArrow {
+  transform: rotate(180deg);
+}
